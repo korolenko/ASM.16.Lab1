@@ -4,76 +4,56 @@ from st10.lr1Container import *
 
 object_list=feline_list()
 
-def action_add():
-    def add_elem():
-        print('0-feline\n1-cat')
-        ttype=ord(input(''))-ord('0')
-        if(ttype==0 or ttype==1):
-            object_list.fadd(ttype)
-        else:
-            print('error type')
-    return add_elem
+def add_elem():
+    print('0-feline\n1-cat')
+    ttype=ord(input(''))-ord('0')
+    if(ttype==0 or ttype==1):
+        object_list.fadd(ttype)
+    else:
+        print('error type')
 
-def action_del():
-    def del_elem():
-        index=ord(input('enter index:'))-ord('0')
-        if(object_list.flen()<=index or index<0):
-            print('Wrong index: {}'.format(index))
-        else:       
-            object_list.fdel(index)
-    return del_elem
+def del_elem():
+    index=ord(input('enter index:'))-ord('0')
+    if(object_list.flen()<=index or index<0):
+        print('Wrong index: {}'.format(index))
+    else:       
+        object_list.fdel(index)
 
-def action_show():
-    def show_list():
-        object_list.fshow()
-    return show_list
+def edit_elem():
+    index=ord(input('enter index:'))-ord('0')
+    if(object_list.flen()<=index or index<0):
+        print('Wrong index: {}'.format(index))
+    else:       
+        object_list.fedit(index)
 
-def action_edit():
-    def edit_elem():
-        index=ord(input('enter index:'))-ord('0')
-        if(object_list.flen()<=index or index<0):
-            print('Wrong index: {}'.format(index))
-        else:       
-            object_list.fedit(index)
-    return edit_elem
-
-def action_write():
-    def write_list():
-        filename=input('Enter filename: ')
-        if(len(filename)<3):
-            object_list.fwrite()
-        else:
-            object_list.fwrite(filename)
-    return write_list
+def write_list():
+    filename=input('Enter filename: ')
+    if(len(filename)<3):
+        object_list.fwrite()
+    else:
+        object_list.fwrite(filename)
     
-def action_read():
-    def read_list():
-        filename=input('Enter filename: ')
-        if(len(filename)<3):
-            object_list.fread()
-        else:
-            object_list.fread(filename)
-    return read_list
-
-def action_clear():
-    def clear_list():
-        object_list.fclear()
-    return clear_list
+def read_list():
+    filename=input('Enter filename: ')
+    if(len(filename)<3):
+        object_list.fread()
+    else:
+        object_list.fread(filename)
 
 def init(menu,actions):
-    menu.append(action_add())
+    menu.append(add_elem)
     actions.append('Add')
-    menu.append(action_edit())
+    menu.append(edit_elem)
     actions.append('Edit')
-    menu.append(action_del())
+    menu.append(del_elem)
     actions.append('Delete')
-    menu.append(action_show())
+    menu.append(object_list.fshow)
     actions.append('Show list')
-    menu.append(action_clear())
+    menu.append(object_list.fclear)
     actions.append('Clear list')
-    menu.append(action_write())
+    menu.append(write_list)
     actions.append('Write list to file')
-    menu.append(action_read())
+    menu.append(read_list)
     actions.append('Read list from file')
     
 def main():

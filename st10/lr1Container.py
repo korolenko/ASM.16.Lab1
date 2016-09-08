@@ -1,6 +1,6 @@
 import pickle
-from st10.lr1Class1 import *
-from st10.lr1Class2 import *
+from .lr1Class1 import *
+from .lr1Class2 import *
 
 class feline_list():
     __container=[]

@@ -1,4 +1,4 @@
-from st10.lr1Class1 import *
+from .lr1Class1 import *
 
 class Cat(feline):
     __kind='Cat'
