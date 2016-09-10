@@ -37,7 +37,7 @@ menu_actions = {
     '1': add,
     '2': edit,
     '3': delete,
-    '4': printList,
+    '4': print_list,
     '5': save,
     '6': load,
     '7': clear,
