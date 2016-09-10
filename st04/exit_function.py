@@ -1,3 +1,3 @@
 ﻿import sys
 def exit(group):
-    sys.exit()
+    sys.exit(0)

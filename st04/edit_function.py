@@ -10,10 +10,7 @@
             grants = input("Enter grants >>  ")
             address = input("Enter address >>  ")
             group.edit(int(studnum)-1, name, age, grants, address)
-        except ValueError:
-            print("Invalid selection!\n")
-            edit(group)
-        except IndexError:
+        except (ValueError, IndexError):
             print("Invalid selection!\n")
             edit(group)
     return

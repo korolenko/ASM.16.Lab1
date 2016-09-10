@@ -11,7 +11,6 @@ from .save_function import *
 group = Group()
 
 def main():    
-    global group
     print("Menu")
     print("1. Add object")
     print("2. Edit object")
@@ -22,22 +21,16 @@ def main():
     print("7. Clear")
     print("0. Quit")
     choice = input(" >>  ")
-    exec_menu(choice,group)
+    exec_menu(choice)
+
  
-    return
- 
-def exec_menu(choice,group):
-    
-    if choice == '':
-        menu_actions['main']()
-    else:
-        try:
-            menu_actions[choice](group)
-        except KeyError:
-            print("Invalid selection!\n")
-            menu_actions['main']()
+def exec_menu(choice):
+    try:
+        menu_actions[choice](group)
+    except KeyError:
+        print("Invalid selection!\n")
     menu_actions['main']()
-    return
+
 
 menu_actions = {
     'main': main,

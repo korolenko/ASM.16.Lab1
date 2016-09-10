@@ -6,10 +6,7 @@
             int(studnum)
             group.check(int(studnum)-1)
             group.delete(int(studnum)-1)
-        except ValueError:
-            print("Invalid selection!\n")
-            delete(group)
-        except IndexError:
+        except (ValueError, IndexError):
             print("Invalid selection!\n")
             delete(group)
     return

@@ -10,7 +10,7 @@ class Group:
         self._student[num].setAge(age)
         self._student[num].setGrants(grants)
         self._student[num].setAddress(address)
-        if type(self._student[num]) == type(Monitor(1,2,3,4,5,6)):
+        if type(self._student[num]) is Monitor:
             phone = input("Enter phone >>  ")
             email = input("Enter email >>  ")
             self._student[num].setPhone(phone)
@@ -30,11 +30,12 @@ class Group:
     def __str__(self):
         tmp_list = []
         count = 1
-        if self._student == []:
-            tmp_string="Empty list\n"
-        else:
+        if self._student:
             for e in self._student:
                 tmp_list.append(str(count) +". " + str(e))
                 count +=  1
             tmp_string = "\n".join(tmp_list)
+            
+        else:
+            tmp_string="Empty list\n"
         return tmp_string
