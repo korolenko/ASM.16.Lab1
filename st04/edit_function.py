@@ -1,18 +1,15 @@
 ﻿def exec_edit(studnum,group):
-    if studnum == '':
+    try:
+        int(studnum)
+        group.check(int(studnum)-1)
+        name = input("Enter name >>  ")
+        age = input("Enter age >>  ")
+        grants = input("Enter grants >>  ")
+        address = input("Enter address >>  ")
+        group.edit(int(studnum)-1, name, age, grants, address)
+    except (ValueError, IndexError):
+        print("Invalid selection!\n")
         edit(group)
-    else:
-        try:
-            int(studnum)
-            group.check(int(studnum)-1)
-            name = input("Enter name >>  ")
-            age = input("Enter age >>  ")
-            grants = input("Enter grants >>  ")
-            address = input("Enter address >>  ")
-            group.edit(int(studnum)-1, name, age, grants, address)
-        except (ValueError, IndexError):
-            print("Invalid selection!\n")
-            edit(group)
     return
 
 def edit(group):

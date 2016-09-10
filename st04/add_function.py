@@ -1,15 +1,11 @@
 ﻿from .student import *
 from .monitor import *
 def exec_add(typeadd,group):
-    if typeadd == '':
-        add_actions['add'](group)
-    else:
-        try:
-            add_actions[typeadd](group)
-        except KeyError:
-            print("Invalid selection!\n")
-            add_actions['add'](group)
-            
+    try:
+        add_actions[typeadd](group)
+    except KeyError:
+        print("Invalid selection!\n")
+        add_actions['add'](group)           
     return
 
 def add(group):

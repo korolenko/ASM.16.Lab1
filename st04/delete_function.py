@@ -1,14 +1,11 @@
 ﻿def exec_delete(studnum,group):
-    if studnum == '':
+    try:
+        int(studnum)
+        group.check(int(studnum)-1)
+        group.delete(int(studnum)-1)
+    except (ValueError, IndexError):
+        print("Invalid selection!\n")
         delete(group)
-    else:
-        try:
-            int(studnum)
-            group.check(int(studnum)-1)
-            group.delete(int(studnum)-1)
-        except (ValueError, IndexError):
-            print("Invalid selection!\n")
-            delete(group)
     return
 
 def delete(group):
