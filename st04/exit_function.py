@@ -1,3 +1,4 @@
-﻿import sys
+﻿# import sys
 def exit(group):
-    sys.exit(0)
+    # sys.exit()
+    return

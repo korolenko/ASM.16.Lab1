@@ -29,7 +29,8 @@ def exec_menu(choice):
         menu_actions[choice](group)
     except KeyError:
         print("Invalid selection!\n")
-    menu_actions['main']()
+    if choice != '0':       
+        menu_actions['main']()
 
 
 menu_actions = {
