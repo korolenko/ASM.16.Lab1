@@ -4,8 +4,7 @@ import sys
 sys.path.append("./project/database")
 import db
 class User(object):
-    """ttttttttt
-       """
+
     def __init__(self,username,password):
             self.date = datetime.datetime.now()
             self.username = username
