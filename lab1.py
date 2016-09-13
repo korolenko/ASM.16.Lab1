@@ -1,6 +1,7 @@
 ﻿import st00.main
 import st04.main
 import st10.main
+import st41.main
 #	добавить импорт своего модуля по шаблону 
 #	import st<номер по журналу>.main
 
