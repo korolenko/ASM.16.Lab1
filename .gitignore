@@ -88,5 +88,5 @@ ENV/
 # Rope project settings
 .ropeproject
 
-./st41/.idea
-./st41/project/__pycache__
+./st41/.idea/
+./st41/project/__pycache__/
