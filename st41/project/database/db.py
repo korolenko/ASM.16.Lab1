@@ -36,3 +36,7 @@ def add_user():
     else:
         print ("add_user: ERROR")
     return
+def clean_table():
+    cc.execute("DELETE FROM USERS  ")
+    connect.commit()
+    pass
