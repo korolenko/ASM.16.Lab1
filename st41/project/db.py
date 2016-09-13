@@ -2,7 +2,7 @@ import sqlite3
 import sys
 sys.path.append("./project")
 import user
-database = "./project/database/dbfile"
+database = "./project/dbfile"
 connect = sqlite3.connect(database=database,isolation_level="EXCLUSIVE")
 cc = connect.cursor()
 def all_users():
