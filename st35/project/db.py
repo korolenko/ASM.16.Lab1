@@ -9,7 +9,7 @@ def all_users():
     for row in cc.execute("select * from USERS"):
         print (row)
 def crete_users_table():
-    cc.execute("create table USERS (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, username TEXT, hash TEXT)")
+    cc.execute("create table USERS (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, username TEXT, hash TEXT, date DATETIME)")
     connect.commit()
     return
 def chec_user_in_db(username):
@@ -29,7 +29,7 @@ def add_user():
     if  not(chec_user_in_db(username)):
         password = input("Password: ")
         newuser = user.User(username, password)
-        cc.execute("insert into USERS values (?,?,?)", (newuser.id,newuser.username,newuser.hash))
+        cc.execute("insert into USERS values (?,?,?,?)", (newuser.id,newuser.username,newuser.hash,newuser.date))
         connect.commit()
         print("add_user: OK")
         newuser.info()

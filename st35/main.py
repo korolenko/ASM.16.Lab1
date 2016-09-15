@@ -3,9 +3,9 @@ import sys
 sys.path.append("./project/");
 import manage
 def main():
-    """    """
+    #manage.menu["F1"]
 
-    manage.menu()
+
     return
 
 if __name__ == '__main__':
