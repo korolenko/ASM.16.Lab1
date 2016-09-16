@@ -17,10 +17,8 @@ MENU = [
 
 def menu():
 	print("------------------------------")
-	i = 0
-	for item in MENU:
+	for i, item in enumerate(MENU):
 		print("{0:2}. {1}".format(i, item[0]))
-		i += 1
 	print("------------------------------")
 	return int(input())
 
