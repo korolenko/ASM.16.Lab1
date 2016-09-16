@@ -16,27 +16,28 @@ class University:
         self.spisok.append(starosta)
         
     def change(self):
-        self.read()
-        num=input('введите номер объекта: ')
-        if type (self.spisok[int(num)])== Student:
-            student=Student()
-            student.name=input('введите имя студента:')
-            student.group=input('введите группу студента:')
-            student.mark=input('введите средний балл студента:')
-            self.spisok[int(num)]=student
+        if len(self.spisok)==0:
+            print('список пуст!')
         else:
-            starosta=Starosta()
-            starosta.name=input('введите имя старосты:')
-            starosta.group=input('введите группу старосты:')
-            starosta.mark=input('введите средний балл старосты:')
-            starosta.age=input('введите возраст старосты:')
-            starosta.salary=input('введите зарплату старосты')
-            self.spisok[int(num)]=starosta
+            self.read()
+            num=input('введите номер объекта: ')
+            if int(num)<0 or int(num)>len(self.spisok):
+                print('неверный номер!')
+            else:
+                if type (self.spisok[int(num)])== Student:
+                    student=Student()
+                    student.write()
+                    self.spisok[int(num)]=student
+                else:
+                    starosta=Starosta()
+                    starosta.write_S()
+                    self.spisok[int(num)]=starosta
+                print('объект изменен!')
         
     def read(self):
         print('список университета: ')
         for Number,Object in enumerate(self.spisok):
-           print (Number, Object) 
+           print (Number, Object)
            
     def clear(self):
         self.spisok.clear()
