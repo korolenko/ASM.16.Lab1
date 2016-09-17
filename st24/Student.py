@@ -10,5 +10,5 @@ class Student:
         self.mark=input('введите средний балл студента:')
         
     def __str__(self):
-        return '[Студент: %s,%s,%s]' %(self.name, self.group,self.mark)
+        return 'Студент: %s,%s,%s' %(self.name, self.group,self.mark)
 

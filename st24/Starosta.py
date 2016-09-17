@@ -10,8 +10,8 @@ class Starosta(Student):
         self.group=input('введите группу старосты:')
         self.mark=input('введите средний балл старосты:')
         self.age=input('введите возраст старосты:')
-        self.salary=input('введите зарплату старосты')
+        self.salary=input('введите зарплату старосты:')
         
     def __str__(self):
-        return '[Староста: %s,%s,%s,%s,%s]' %(self.name, self.group,self.mark,self.age,self.salary)    
+        return 'Староста: %s,%s,%s,%s,%s' %(self.name, self.group,self.mark,self.age,self.salary)    
 

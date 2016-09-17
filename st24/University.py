@@ -35,13 +35,13 @@ class University:
                 print('объект изменен!')
         
     def read(self):
-        print('список университета: ')
+        print('Список университета: ')
         for Number,Object in enumerate(self.spisok):
            print (Number, Object)
            
     def clear(self):
         self.spisok.clear()
-        print('список чист')
+        print('список чист!')
         
     def write_f(self):
         pickle.dump(self.spisok, open('file.dat', 'wb'))
