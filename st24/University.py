@@ -9,7 +9,7 @@ class University:
         student=Student()
         student.write()
         self.spisok.append(student)
-        print('студент успешно добавлен!')
+        print('студент успешно добавлен! ')
         
     def new_sta(self):
         starosta=Starosta()
