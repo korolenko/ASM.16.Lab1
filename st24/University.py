@@ -9,13 +9,13 @@ class University:
         student=Student()
         student.write()
         self.spisok.append(student)
-        print('студент добавлен!')
+        print('студент успешно добавлен!')
         
     def new_sta(self):
         starosta=Starosta()
         starosta.write_S()
         self.spisok.append(starosta)
-        print('староста добавлена!')
+        print('староста успешно добавлена!')
         
     def change(self):
         if len(self.spisok)==0:
